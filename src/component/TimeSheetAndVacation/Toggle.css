@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+/* hsl(199, 100%, 33%) */
+:root {
+    --switches-bg-color:#5A40A7; 
+    --switches-label-color: white ;
+    --switch-bg-color: white;
+    --switch-text-color: #49007F  ;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* @media screen and (max-width>=1024px) {
+
+    html,
+    body {
+        font-size: 24px ;
+    }
+} */
+
+/* @media screen and (min-width<= 1024px) {
+
+    html,
+    body {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width>= 600px) {
+
+    html,
+    body {
+        font-size: 13px !important;
+    }
+} 
+
+@media screen and (min-width<= 600px) {
+
+    html,
+    body {
+        font-size: 12px !important;
+    }
+} */
+
+@media screen and (max-width:798px) {
+
+    html,
+    body {
+        font-size: 12px !important;
+    }
+
+    .ui.stackable.menu {
+        height: 12vh;
+        flex-direction: row !important;
+    }
+}
+
+.switches-container {
+    width: 26rem;
+    position: relative;
+    display: flex;
+    padding: 0;
+    position: relative;
+    background: var(--switches-bg-color);
+    line-height: 3rem;
+    border-radius: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.switches-container input {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+}
+
+.switches-container label {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+    color: var(--switches-label-color);
+}
+
+.switch-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 0.15rem;
+    z-index: 2;
+    transition: transform .3s cubic-bezier(.77, 0, .175, 1);
+    /* transition: transform 1s; */
+}
+
+.switch {
+    border-radius: 3rem;
+    background: var(--switch-bg-color);
+    height: 100%;
+}
+
+.switch div {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    display: inline;
+    color: var(--switch-text-color) ;
+    transition: opacity .2s cubic-bezier(.77, 0, .175, .3) .125s;
+    will-change: opacity;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* slide the switch box from right to left */
+.switches-container input:nth-of-type(1):checked~.switch-wrapper {
+    transform: translateX(0%);
+}
+
+/* slide the switch box from left to right */
+.switches-container input:nth-of-type(2):checked~.switch-wrapper {
+    transform: translateX(100%);
+}
+
+/* toggle the switch box labels - first checkbox:checked - show first switch div */
+.switches-container input:nth-of-type(1):checked~.switch-wrapper .switch div:nth-of-type(1) {
+    opacity: 1;
+}
+
+/* toggle the switch box labels - second checkbox:checked - show second switch div */
+.switches-container input:nth-of-type(2):checked~.switch-wrapper .switch div:nth-of-type(2) {
+    opacity: 1;
+}

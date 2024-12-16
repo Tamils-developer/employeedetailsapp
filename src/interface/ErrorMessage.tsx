@@ -1,0 +1,33 @@
+export const errorstyle = {
+  formInputFailure: "Failed To Submit The Form Due to invalid credentials ",
+  formConnectionFailure: "Connection Error ",
+  formSubmited: "Form Submited Successfully",
+  formUpdated: "Form Updated Successfully",
+  formStyleFailure: {
+    padding: "25px",
+    borderRadius: "5px",
+    width: "100%",
+    Color: "red",
+    background: "rgb(248, 191, 191,0.700)",
+    fontFamily: "system-ui",
+    fontSize: "medium",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  formStyleSuccess: {
+    padding: "25px",
+    borderRadius: "5px",
+    width: "100%",
+    Color: "green",
+    background: "rgba(141, 241, 158, 0.615)",
+    fontSize: "medium",
+    fontFamily: "system-ui",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};
+export default errorstyle;
